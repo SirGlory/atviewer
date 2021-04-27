@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, flash, Markup, jsonify
-from data_check import DataCheck
 from flask_wtf import FlaskForm, CSRFProtect
 from flask_bootstrap import Bootstrap
-from wtforms.validators import DataRequired, Length
 from wtforms.fields import *
 from werkzeug.utils import redirect
 from scrape_last_photos import PhotoUrls
@@ -59,7 +57,7 @@ def at_viewer():
     return redirect("https://atmapper.herokuapp.com/")
 
 
-@app.route('/explore', methods=['GET', 'POST'])
+@app.route('/explore', methods=['GET'])
 def explore():
     return render_template('explore.html')
 
