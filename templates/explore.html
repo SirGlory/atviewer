@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block content %}
+<body>
+<div class="container">
+  <div class="row text-center">
+    <div class="text-danger font-weight-bolder col-sm-12  mb-1"><h1>@viewer</h1></div>
+    <div class="font-weight-bold col-sm-12 mb-3"><h5>Explore the handles below</h5></div>
+    <div class="container">
+      <form action="/photos" method="post">
+        <div class="row justify-content-center">
+            <button type="submit"  class="btn btn-danger mb-3" name="handle" id="handle" value="teampolarsteps">@teampolarsteps</button><br>
+        </div>
+      </form>
+      <form action="/photos" method="post">
+            <button type="submit"  class="btn btn-danger mb-3" name="handle" id="handle" value="cityofcapetown">@cityofcapetown</button>
+      </form>
+      <form action="/photos" method="post">
+            <button type="submit" class="btn btn-danger mb-3" name="handle" id="handle" value="tony_ontheroad">@tony_ontheroad</button>
+      </form>
+      <form action="/photos" method="post">
+            <button type="submit"  class="btn btn-danger mb-3" name="handle" id="handle" value="rolling_sloane">@rolling_sloane</button>
+      </form>
+      <form action="/photos" method="post">
+            <button type="submit"  class="btn btn-danger mb-4" name="handle" id="handle" value="cape_secrets">@cape_secrets</button>
+      </form>
+    </div>
+
+  </div>
+<!--class="cp;-->
+</div>
+</div>
+
+
+
+</body>
+</html>
+{% endblock %}

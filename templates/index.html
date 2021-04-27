@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form, render_field, render_form_row %}
+{% block content %}
+
+<div class="container">
+  <div class="row text-center">
+    <div class="text-danger font-weight-bolder col-sm-12  mb-2"><h1>@viewer</h1></div>
+    <div class="font-weight-bold col-sm-12 mb-4"><h4>Instagram Photo Viewer</h4></div>
+    <div class="container">
+    {% if error %}
+      <p class=error><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+      <form action="/photos" method="post">
+        <div class="row justify-content-center">
+          <div  class="mw-50">
+            <input type="text" class="form-control mb-4" name="handle" id="handle" value="4x4theboiz">
+            <button type="submit"  class="btn btn-danger mb-5">Display Latest Photos</button><br>
+          </div>
+        </div>
+      </form>
+      <div class="font-weight-bold col-sm-12 mb-4"><h5>How are they looking?</h5></div>
+      <form action="/photos" method="post">
+          <button type="submit" formaction="/photos" class="btn btn-danger mb-5" name="handle" id="handle" value="4x4theboiz">@4x4theboiz</button>
+      </form>
+    </div>
+<!--  <input class="form-control" type="text" placeholder="Default input">-->
+<!--  <div class="col-sm-12">{{ render_form(form) }}</div>-->
+<!--  <div class="col-sm-12 mb-1"><a href="{{ url_for('about') }}"><h5>About</h5></a></div>-->
+<!--    <div class="col-sm-12 mb-1"><a href="{{ url_for('explore') }}"><h5>Explore</h5></a></div>-->
+<!--  <div class="col-sm-12 mb-1"><a href="{{ url_for('at_viewer') }}"><h5>@viewer</h5></a></div>-->
+  </div>
+</div>
+
+{% endblock %}
+</body>
+</html>
