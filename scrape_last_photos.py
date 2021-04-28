@@ -38,8 +38,9 @@ class PhotoUrls:
         # Add unique locations to list
 
         for i in range(0, len(last_loc), 1):
-            xx = last_loc[i].find('img').get('src')
-            #print(xx)
+            x = last_loc[i].find('img').get('src')
+            prefix = "https://www.picuki.com"
+            xx = prefix + x
             if xx not in photos:
                 if xx != '':
                     photos.append(xx)
@@ -48,8 +49,9 @@ class PhotoUrls:
             else:
                 pass
 
-        last_location_url = last_loc[0].find('img').get('src')
-        #print(photos)
+        #last_location_url = last_loc[0].find('img').get('src')
+        print(f"First Photo: {photos[0]}")
+        print(f"Last Photo: {photos[-1]}")
         #for links in photos:
             #print(f"Photo URL: {photos[i]}")
 
